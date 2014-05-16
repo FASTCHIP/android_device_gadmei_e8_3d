@@ -38,6 +38,9 @@ on boot
 service ueventd /sbin/ueventd
     critical
 
+service console /sbin/sh
+    console
+
 service recovery /sbin/recovery
 
 service adbd /sbin/adbd recovery
