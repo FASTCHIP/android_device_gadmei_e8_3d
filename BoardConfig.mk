@@ -17,7 +17,7 @@
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 
 # Use the non-open-source parts, if they're present
--include vendor/ainol/elf2/BoardConfigVendor.mk
+-include vendor/gadmei/e8_3d/BoardConfigVendor.mk
 
 # Alsa
 BOARD_USES_ALSA_AUDIO := true
@@ -34,7 +34,7 @@ BOARD_HAVE_COMPASS := false
 # Camera
 USE_CAMERA_STUB := false
 BOARD_HAVE_FRONT_CAM :=true
-BOARD_HAVE_BACK_CAM :=false
+BOARD_HAVE_BACK_CAM :=true
 
 # Touchscreen
 TARGET_TOUCH_CALIBRATION_METHOD := none
@@ -76,20 +76,20 @@ TARGET_GLOBAL_CFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 TARGET_GLOBAL_CPPFLAGS += -mtune=cortex-a9 -mfpu=neon -mfloat-abi=softfp
 
 TARGET_BOARD_PLATFORM := meson6
-TARGET_BOOTLOADER_BOARD_NAME := g06ref
+TARGET_BOOTLOADER_BOARD_NAME := g11n8
 TARGET_NO_BOOTLOADER := true
-#TARGET_NO_KERNEL := true
+# TARGET_NO_KERNEL := true
 TARGET_NO_RADIOIMAGE := true
 TARGET_SIMULATOR := false
 TARGET_PROVIDES_INIT_RC := true
 
-BOARD_EGL_CFG := device/ainol/elf2/egl.cfg
+BOARD_EGL_CFG := device/gadmei/e8_3d/egl.cfg
 USE_OPENGL_RENDERER := true
 ENABLE_WEBGL := true
 BOARD_USE_SKIA_LCDTEXT := true
 
 # CWM
-#TARGET_RECOVERY_INITRC := device/ainol/elf2/recovery.init.rc
+#TARGET_RECOVERY_INITRC := device/gadmei/e8_3d/recovery.init.rc
 #BOARD_HAS_NO_SELECT_BUTTON := true
 #BOARD_UMS_LUNFILE := "/sys/class/android_usb/android0/f_mass_storage/lun0/file"
 
@@ -100,18 +100,25 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_stora
 COMMON_GLOBAL_CFLAGS += -DICS_CAMERA_BLOB
 
 # TWRP
-#TARGET_RECOVERY_INITRC := device/ainol/elf2/recovery.init.rc
-#DEVICE_RESOLUTION := 1024x600
-#TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
-#RECOVERY_GRAPHICS_USE_LINELENGTH := true
-#TW_INTERNAL_STORAGE_PATH := "/emmc"
-#TW_INTERNAL_STORAGE_MOUNT_POINT := "emmc"
-#TW_EXTERNAL_STORAGE_PATH := "/sdcard"
-#TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-#TW_NO_REBOOT_BOOTLOADER := true
-#TW_FLASH_FROM_STORAGE := true
-TARGET_PREBUILT_KERNEL := device/ainol/elf2/kernel
-BOARD_KERNEL_BASE := 0x40000000
+TARGET_RECOVERY_INITRC := device/gadmei/e8_3d/recovery.init.rc
+TARGET_SCREEN_HEIGHT := 1280
+TARGET_SCREEN_WIDTH := 800
+DEVICE_RESOLUTION := 800x1280
+TARGET_RECOVERY_PIXEL_FORMAT := "RGB_565"
+# RECOVERY_GRAPHICS_USE_LINELENGTH := true
+TW_INTERNAL_STORAGE_PATH := "/emmc"
+TW_INTERNAL_STORAGE_MOUNT_POINT := "emmc"
+TW_EXTERNAL_STORAGE_PATH := "/sdcard"
+TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
+TW_FLASH_FROM_STORAGE := true
+TW_CUSTOM_POWER_BUTTON := 116
+# TW_EXCLUDE_SUPERSU := true
+TW_NO_REBOOT_BOOTLOADER := true
+TWHAVE_SELINUX := true
+PRODUCT_COPY_FILES += device/gadmei/e8_3d/twrp.fstab:recovery/root/etc/twrp.fstab
+
+TARGET_PREBUILT_KERNEL := device/gadmei/e8_3d/kernel
+BOARD_KERNEL_BASE := 0x80008000
 BOARD_KERNEL_CMDLINE := console=ttyS0,115200 rw init=/init loglevel=8
 
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/ainol/elf2/releasetools/amlogic_ota_from_target_files
+TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := device/gadmei/e8_3d/releasetools/amlogic_ota_from_target_files

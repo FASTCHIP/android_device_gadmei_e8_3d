@@ -12,8 +12,8 @@ LOCAL_SHARED_LIBRARIES := liblog libEGL libamavutils
 LOCAL_SRC_FILES := hwcomposer.cpp
 
 LOCAL_C_INCLUDES +=\
-        device/ainol/elf2/packages/LibPlayer/amavutils/include \
-	device/ainol/elf2/include
+        device/gadmei/e8_3d/packages/LibPlayer/amavutils/include \
+	device/gadmei/e8_3d/include
 
 LOCAL_MODULE := hwcomposer.amlogic
 LOCAL_CFLAGS:= -DLOG_TAG=\"hwcomposer\"

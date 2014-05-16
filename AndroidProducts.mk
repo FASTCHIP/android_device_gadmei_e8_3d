@@ -15,5 +15,5 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/full_elf2.mk
+    $(LOCAL_DIR)/full_e8_3d.mk
     
