@@ -3,10 +3,11 @@
 #/logo		mtd		logo
 #/aml_logo	mtd		aml_logo
 #/recovery	mtd		recovery
+#/factory	mtd		factory
 /boot		mtd		boot
-/system		ubifs		system
-/cache		yaffs2		cache
-/data		ubifs		userdata
-/emmc		vfat		/dev/block/avnftli1
-/sdcard		vfat  		/dev/block/cardblksd1	/dev/block/cardblksd0
+/system		ext4		/dev/block/system
+/cache		ext4		/dev/block/cache
+/data		ext4		/dev/block/data
+/emmc		vfat		/dev/block/media
+/sdcard		auto  		/dev/block/cardblksd1	/dev/block/cardblksd0
 /sd-ext		auto		/dev/block/cardblksd2

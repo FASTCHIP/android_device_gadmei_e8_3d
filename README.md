@@ -1,4 +1,4 @@
-android_device_ainol_elf2
+android_device_gadmei_e8_3d
 ===========================
 
-Ainol ELF-II specific files
+Gadmei E8-3D specific files

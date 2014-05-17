@@ -14,15 +14,15 @@
 
 $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 
-DEVICE_PACKAGE_OVERLAYS := device/ainol/elf2/overlay
+DEVICE_PACKAGE_OVERLAYS := device/gadmei/e8_3d/overlay
 
 # Ramdisk
+#     $(LOCAL_PATH)/ramdisk/mali.ko:root/boot/mali.ko \
+#     $(LOCAL_PATH)/ramdisk/ump.ko:root/boot/ump.ko \
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/ramdisk/mali.ko:root/boot/mali.ko \
-    $(LOCAL_PATH)/ramdisk/ump.ko:root/boot/ump.ko \
     $(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
     $(LOCAL_PATH)/ramdisk/init:root/init \
-    $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc
+    $(LOCAL_PATH)/ramdisk/ueventd.rc:root/ueventd.rc 
 
 # Prebuilt boot animation & PPP Widget
 PRODUCT_COPY_FILES += \
@@ -57,11 +57,11 @@ PRODUCT_COPY_FILES += \
 
 # USB ModeSwitch
 PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,device/ainol/elf2/configs/usb_modeswitch.d,system/etc/usb_modeswitch.d)
+	$(call find-copy-subdir-files,*,device/gadmei/e8_3d/configs/usb_modeswitch.d,system/etc/usb_modeswitch.d)
 
 # Prebuilt kernel modules
 PRODUCT_COPY_FILES += \
-	$(call find-copy-subdir-files,*,device/ainol/elf2/modules,system/lib/modules)
+	$(call find-copy-subdir-files,*,device/gadmei/e8_3d/modules,system/lib/modules)
 
 # Prebuilt proprietary stuff
 PRODUCT_COPY_FILES += \
@@ -98,7 +98,7 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.usb.host.xml:system/etc/permissions/android.hardware.usb.host.xml \
     packages/wallpapers/LivePicker/android.software.live_wallpaper.xml:system/etc/permissions/android.software.live_wallpaper.xml
 
-DEVICE_PACKAGE_OVERLAYS := device/ainol/elf2/overlay
+DEVICE_PACKAGE_OVERLAYS := device/gadmei/e8_3d/overlay
 
 # AML HAL
 PRODUCT_PACKAGES += \
@@ -204,7 +204,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     dalvik.vm.dexopt-data-only=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    persist.sys.timezone=Europe/Rome \
+    persist.sys.timezone=Europe/Moscow \
     persist.sys.language=en \
     persist.sys.country=US \
     persist.sys.use_dithering=0 \
@@ -234,4 +234,4 @@ $(shell touch out/target/product/elf2/obj/SHARED_LIBRARIES/libUMP_intermediates/
 
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 $(call inherit-product, build/target/product/full_base.mk)
-$(call inherit-product-if-exists, vendor/ainol/elf2/elf2-vendor.mk)
+$(call inherit-product-if-exists, vendor/gadmei/e8_3d/e8_3d-vendor.mk)
