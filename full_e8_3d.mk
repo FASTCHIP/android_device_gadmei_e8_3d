@@ -223,14 +223,14 @@ PRODUCT_CHARACTERISTICS := tablet
 
 PRODUCT_TAGS += dalvik.gc.type-precise
 
-TARGET_BOOTANIMATION_NAME := horizontal-1024x600
+TARGET_BOOTANIMATION_NAME := vertical-800x1280
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 
-$(shell mkdir -p out/target/product/elf2/obj/SHARED_LIBRARIES/libMali_intermediates)
-$(shell mkdir -p out/target/product/elf2/obj/SHARED_LIBRARIES/libUMP_intermediates)
-$(shell touch out/target/product/elf2/obj/SHARED_LIBRARIES/libMali_intermediates/export_includes)
-$(shell touch out/target/product/elf2/obj/SHARED_LIBRARIES/libUMP_intermediates/export_includes)
+$(shell mkdir -p out/target/product/e8_3d/obj/SHARED_LIBRARIES/libMali_intermediates)
+$(shell mkdir -p out/target/product/e8_3d/obj/SHARED_LIBRARIES/libUMP_intermediates)
+$(shell touch out/target/product/e8_3d/obj/SHARED_LIBRARIES/libMali_intermediates/export_includes)
+$(shell touch out/target/product/e8_3d/obj/SHARED_LIBRARIES/libUMP_intermediates/export_includes)
 
 $(call inherit-product, frameworks/native/build/tablet-7in-hdpi-1024-dalvik-heap.mk)
 $(call inherit-product, build/target/product/full_base.mk)
