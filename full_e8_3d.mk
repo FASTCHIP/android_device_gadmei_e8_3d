@@ -192,7 +192,8 @@ PRODUCT_PROPERTY_OVERRIDES += \
     service.adb.root=1 \
     ro.secure=0 \
     ro.allow.mock.location=1 \
-    ro.debuggable=1
+    ro.debuggable=1 \
+    sys.uses.ext4=1
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.locationfeatures=1 \
