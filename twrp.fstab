@@ -7,7 +7,9 @@
 /sd-ext		auto	/dev/block/cardblksd2	flags=display="SD-EXT";backup=1;wipeingui;removable
 /usb-otg	auto	/dev/block/sda1 /dev/block/sda	flags=display="USB-OTG";storage;wipeingui;removable
 
-/bootloader	mtd	bootloader	flags=backup=1;display="U-Boot" 
+# Kills the U-Boot when restoring from a backup, DO NOT UNCOMMENT!
+# /bootloader	mtd	bootloader	flags=backup=1;display="U-Boot" 
+
 /logo		mtd	logo		flags=backup=1;display="Logo"
 /aml_logo	mtd	aml_logo	flags=backup=1;display="AML_logo"
 /recovery	mtd	recovery	flags=backup=1;display="Recovery"
